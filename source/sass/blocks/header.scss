@@ -16,6 +16,15 @@
    }
 
    &__logo {
+
+      @media (min-width: 768px) {
+         margin-right: 140px;
+      }
+
+      @media (min-width: 1728px) {
+         margin-right: 363px;
+      }
+
       img {
          display: block;
          width: 74px;
@@ -25,14 +34,6 @@
             width: 94px;
             height: 32px;
          }
-      }
-
-      @media (min-width: 768px) {
-         margin-right: 140px;
-      }
-
-      @media (min-width: 1728px) {
-         margin-right: 363px;
       }
    }
 
@@ -78,6 +79,12 @@
    &__button {
       @include clear-button;
 
+      &_burger {
+         @media (min-width: 767px) {
+            display: none;
+         }
+      }
+
       img {
          width: 19px;
          height: 17px;
@@ -85,12 +92,6 @@
          @media (min-width: 768px) {
             width: 29px;
             height: 27px;
-         }
-      }
-
-      &_burger {
-         @media (min-width: 767px) {
-            display: none;
          }
       }
    }   

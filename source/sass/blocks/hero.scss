@@ -1,0 +1,250 @@
+.hero {
+   &__container {
+      @media (min-width: 1728px) {
+         display: flex;
+         justify-content: space-between;
+         position: relative;
+      }
+   }
+ 
+   &__left {
+      margin-bottom: 54px;
+ 
+      @media (min-width: 768px) {
+         margin-bottom: 72px;
+         max-width: 729px;
+      }
+ 
+      @media (min-width: 1728px) {
+         margin-bottom: 0;
+      }
+   }
+ 
+   &__wrapper {
+      position: relative;
+      margin-left: 24px;
+      padding-top: 35px;
+      margin-bottom: 22px;
+ 
+      @media (min-width: 768px) {
+         padding-top: 59px;
+         margin-bottom: 72px;
+      }
+ 
+      @media (min-width: 1728px) {
+         padding-top: 140px;
+      }
+   }
+ 
+   &__title {
+      margin-top: 0;
+      margin-bottom: 20px;
+      display: block;
+      color: #000;
+ 
+      @media (min-width: 1728px) {
+         margin-bottom: 78px;
+      }
+   }
+ 
+   &__item1 {
+      text-transform: capitalize;
+      font-size: 24px;
+      line-height: 26px;
+
+      @media (min-width: 768px) {
+         font-size: 48px;
+         line-height: 53px;
+      }
+
+      @media (min-width: 1728px) {
+         font-size: 75px;
+         line-height: 84px;
+      }
+   }
+
+   &__item2 {
+      text-transform: capitalize;
+      font-size: 36px;
+      line-height: 40px;
+      display: block;
+
+      @media (min-width: 768px) {
+         font-size: 96px;
+         line-height: 120px;
+      }
+
+      @media (min-width: 1728px) {
+         font-size: 75px;
+         line-height: 84px;
+      }
+   }
+
+   &__item3 {
+      text-transform: capitalize;
+      font-size: 64px;
+      line-height: 69px;
+      margin-bottom: 78px;
+
+      @media (min-width: 768px) {
+         font-size: 62px;
+         line-height: 70px;
+         display: inline-block;
+         margin-right: 96px;
+      }
+ 
+      @media (min-width: 1728px) {
+         font-size: 75px;
+         line-height: 84px;
+         margin-right: 0;
+      }
+   }
+   
+ 
+   p {
+     text-transform: capitalize;
+     font-size: 15px;
+     font-weight: 400;
+     margin-top: 0;
+     color: #000;
+ 
+      @media (min-width: 768px) {
+         font-size: 20px;
+         line-height: 30px;
+         position: absolute;
+         top: 242px;
+         right: 6px;
+      }
+ 
+      @media (min-width: 1728px) {
+         font-size: 28px;
+         line-height: 43px;
+         position: static;
+      }
+   }
+ 
+   &__button {
+      @include clear-button;
+ 
+      display: block;
+      width: 100%;
+      height: 55px;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 30px;
+      color: #FFFFFF;
+      background-color: #000;
+      box-shadow: 15px 20px 13px rgb(0, 0, 0, 15%);
+ 
+      @media (min-width: 768px) {
+         width: 458px;
+         height: 87px;
+         margin: 0 auto;
+         font-size: 28px;
+      }
+ 
+      @media (min-width: 1728px) {
+         width: 312px;
+         margin: 0;
+      }
+   }
+ 
+   &__right {
+      padding-top: 29px;
+      padding-bottom: 32px;
+      background:
+         url("../img/mobile-ultimate.svg"),
+         linear-gradient(180deg, #E4E4E4 0%, #FAFAFA 100%);
+      background-size: 100% auto;
+      background-repeat: no-repeat, no-repeat;
+      background-position: 100% -2%;
+      text-align: center;
+      margin-left: -10px;
+      margin-right: -10px;
+ 
+      @media (min-width: 768px) {
+         padding-top: 56px;
+         padding-bottom: 40px;
+         margin-left: -20px;
+         margin-right: -20px;
+      }
+ 
+      @media (min-width: 1728px) {
+         padding-top: 140px;
+         padding-bottom: 137px;
+ 
+      &::before {
+         position: absolute;
+         top: -95px;
+         bottom: 0;
+         left: 43%;
+         width: calc(50vw + 7%);
+         background:
+           url("../img/ultimate.svg"),
+           linear-gradient(90deg, #E4E4E4 0%, #FAFAFA 100%);
+         background-repeat: no-repeat, no-repeat;
+         background-position: -1% 92%;
+         content: "";
+         z-index: 1;
+         }
+      }
+   }
+ 
+   &__sneaker {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 55px;
+ 
+      @media (max-width: 767px) {
+         width: 296px;
+         height: 179px;
+      }
+ 
+      @media (min-width: 768px) {
+         width: 504px;
+         height: 305px;
+      }
+ 
+      @media (min-width: 1728px) {
+         width: 783px;
+         height: 474px;
+         margin-bottom: 117px;
+      }
+   }
+ 
+   &__text {
+      position: relative;
+      z-index: 2;
+      display: block;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 21px;
+      margin-bottom: 8px;
+      color: #000;
+ 
+      @media (min-width: 768px) {
+         margin-bottom: 15px;
+      }
+ 
+      @media (min-width: 768px) {
+         font-size: 38px;
+      }
+   }
+ 
+   &__price {
+      position: relative;
+      z-index: 2;
+      font-size: 20px;
+      font-weight: 500;
+      color: #00000080;
+ 
+      @media (min-width: 768px) {
+         font-size: 32px;
+      }
+ 
+      @media (min-width: 1728px) {
+         position: relative;
+         z-index: 2;
+      }
+   }
+ }

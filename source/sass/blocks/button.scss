@@ -1,0 +1,33 @@
+.button {
+   @include clear-button;
+
+   font-size: 20px;
+   font-weight: 600;
+   line-height: 30px;
+   padding: 12px 80px;
+   color: #ffffff;
+   text-align: center;
+   background-color: #000000;
+   text-transform: capitalize;
+   cursor: pointer;
+   box-shadow: 
+         0 2px 2px 0 #00000006,
+         0 5px 5px 0 #00000009,
+         0 10px 8px 0 #0000000B,
+         0 16px 14px 0 #0000000C,
+         0 26px 22px 0 #0000000E,
+         0 46px 39px 0 #00000011,
+         0 100px 85px 0 #00000017;
+
+   @media (min-width: 768px) {
+      line-height: 43px;
+      padding: 22px 124px;
+   }
+
+   @media (min-width: 768px) {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 43px;
+      padding: 22px 56px;
+   }
+}

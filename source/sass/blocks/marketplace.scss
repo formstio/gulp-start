@@ -28,16 +28,6 @@
       }
    }
 
-   @keyframes slide-animation-two {
-      from {
-         transform: translateX(4%);
-      }
-
-      to {
-         transform: translateX(-126%);
-      }
-   }
-
    &__list {
       @include clear-list;
 

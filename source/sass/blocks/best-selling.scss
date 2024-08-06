@@ -1,0 +1,91 @@
+.best-selling {
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+   }
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 25px;
+
+      @media (min-width: 768px) {
+         flex-direction: row;
+         flex-wrap: wrap;
+         gap: 40px;
+         margin-bottom: 40px;
+      }
+
+      @media (min-width: 1728px) {
+         display: grid;
+         grid-template-columns: repeat(3, minmax(373px, 504px));
+         grid-template-rows: repeat(2, 524px);
+         gap: 60px 20px;
+         margin-bottom: 85px;
+         }
+      }
+
+   &__click {
+      display: flex;
+      margin-bottom: 25px;
+      gap: 18px;
+
+      @media (min-width: 768px) {
+         margin-bottom: 60px;
+         gap: 80px;
+      }
+
+      @media (min-width: 1728px) {
+         margin-bottom: 80px;
+      }
+   }
+
+   &__button {
+      @include clear-button;
+
+      font-size: 14px;
+      padding: 8px 38px;
+      border: 2px solid #000;
+
+      @media (min-width: 768px) {
+         font-size: 28px;
+         padding: 20px 48px;
+         gap: 80px;
+      }
+
+      &--men {
+         background-color: #000;
+         color: #fff;
+      }
+   }
+
+   &__product {
+      width: 100%;
+
+      &--medium {
+         @media (min-width: 768px) and (max-width: 1727px) {
+         width: 47%;
+         }
+      }
+
+      &--big {
+         grid-column: span 2;
+         grid-row: span 2;
+      }
+   }
+
+   &__btn {
+      @include clear-button;
+
+      font-size: 28px;
+      font-weight: 600;
+      width: 290px;
+      background-color: #000000;
+      color: #fff;
+      text-transform: capitalize;
+   }
+ }

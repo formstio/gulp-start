@@ -9,7 +9,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="header__container conteiner">
+      <div class="header__container container">
         <a class="header__logo">
           <img src="img/logo-slick.svg" alt="">
         </a>
@@ -60,7 +60,7 @@
     </header>
 
     <main>
-      <div class="hero">
+      <section class="hero">
         <div class="hero__container container">
           <div class="hero__left">
             <div class="hero__wrapper">
@@ -85,7 +85,93 @@
             <span class="hero__price">3999 ₽</span>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section class="marketplace">
+        <div class="marketplace__container container">
+
+          <ul class="marketplace__list">
+            <li>
+              <a href="#">
+                <img class="marketplace__image" src="img/icon-ozon.svg" alt="ozon">
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img class="marketplace__image" src="img/icon-wb.svg" alt="wb">
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img class="marketplace__image" src="img/icon-sbermarket.svg" alt="sber market">
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="#">
+                <img class="marketplace__image" src="img/icon-yamarket.svg" alt="yandex market">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+      <section class="best-selling">
+        <div class="best-selling__container container">
+          <h2 class="best-selling__title title">
+            best selling
+          </h2>
+
+          <div class="best-selling__click">
+            <button class="best-selling__button best-selling__button--men">Мужские</button>
+            <button class="best-selling__button">Женские</button>
+          </div>
+
+          <div class="best-selling__wrapper">
+
+            <div class="best-selling__product best-selling__product--big">
+              <div class="product product--big product--hot">
+                <img class="product__image" src="img/slick-formal-sneaker-shoe.png" alt="Slick formal sneaker shoe">
+                <span class="product__name">Slick formal sneaker shoe</span>
+                <div class="product__price">
+                  <span class="product__new">2 999 ₽ </span>
+                  <span class="product__old">4999 ₽</span>
+                  <button class="product__button product__button--big"></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="best-selling__product best-selling__product--medium">
+              <div class="product">
+                <img class="product__image" src="img/slick-sneaker-shoe.png" alt="Slick sneaker shoe">
+                <span class="product__name">Slick sneaker shoe</span>
+                <div class="product__price">
+                  <span class="product__new">2999 ₽</span>
+                  <span class="product__old">3999 ₽</span>
+                  <button class="product__button product__button--medium"></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="best-selling__product best-selling__product--medium">
+              <div class="product product--new">
+                <img class="product__image" src="img/slick-canvas-shoe.png" alt="Slick canvas shoe">
+                <span class="product__name">Slick canvas shoe</span>
+                <div class="product__price">
+                  <span class="product__new">2999 ₽</span>
+                  <span class="product__old">3999 ₽</span>
+                  <button class="product__button product__button--medium"></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="best-selling__btn">показать все</button>
+        </div>
+      </section>
     </main>
   </body>
 </html>

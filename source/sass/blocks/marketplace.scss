@@ -1,0 +1,61 @@
+.marketplace {
+   &__container {
+      justify-content: center;
+      display: flex;
+      background-color: black;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      overflow: hidden;
+
+      @media (min-width: 768px) {
+         padding-top: 45px;
+         padding-bottom: 45px;
+      }
+
+      @media (min-width: 1728px) {
+         padding-top: 56px;
+         padding-bottom: 56px;
+      }
+   }
+
+   @keyframes slide-animation-one {
+      from {
+         transform: translateX(0%);
+      }
+
+      to {
+         transform: translateX(-170%);
+      }
+   }
+
+   &__list {
+      @include clear-list;
+
+      display: flex;
+      gap: 40px;
+      margin-right: -10px;
+      margin-left: -10px;
+      animation-duration: 22s;
+      animation-name: slide-animation-one;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+      @media (min-width: 768px) {
+         gap: 195px;
+      }
+
+      @media (min-width: 1728px) {
+         animation: none;
+         justify-content: space-between;
+      }
+   }
+
+   &__image {
+      height: 18px;
+
+      @media (min-width: 768px) {
+         height: 40px;
+      }
+   }
+}
+

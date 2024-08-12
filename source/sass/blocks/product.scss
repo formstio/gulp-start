@@ -65,11 +65,11 @@
    }
 
    &::after {
-      
+
       position: absolute;
       text-align: center;
       color: #fff;
-      
+
       top: 10%;
       left: -10px;
    }
@@ -151,7 +151,9 @@
 
    &__price {
       display: flex;
-      align-items: center;
+     justify-content: space-between;
+     color: #000000;
+      //align-items: center;
       width: 100%;
 
       @media (min-width: 1728px) {

@@ -19,7 +19,7 @@
     padding: 30px 40px;
   }
 
-  &__hidden {
+  &--hidden {
     display: none;
 
     &--open {
@@ -27,7 +27,7 @@
     }
   }
 
-  &__size {
+  &--popup {
     width: 300px;
 
     @media (min-width: 768px) {

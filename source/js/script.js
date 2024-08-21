@@ -39,9 +39,9 @@ buttonOpenProductBig.addEventListener('click', function () {
 
 buttonProductMedium.forEach(
     (buttonProductMedium) => {
-    buttonProductMedium.addEventListener('click', () => {
-    openModalProduct.classList.add('modal--hidden--open');
-    buttonCloseProduct.addEventListener('click', closeProduct);
-    buttonCloseNext.addEventListener('click', closeProduct);
+        buttonProductMedium.addEventListener('click', () => {
+        openModalProduct.classList.add('modal--hidden--open');
+        buttonCloseProduct.addEventListener('click', closeProduct);
+        buttonCloseNext.addEventListener('click', closeProduct);
     });
 });

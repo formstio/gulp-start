@@ -1,4 +1,3 @@
-// import './burgerMenu.js';
 
 const buttonOpened = document.querySelector ('.header__button--burger');
 const buttonClose = document.querySelector('.header__close');

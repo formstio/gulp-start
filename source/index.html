@@ -214,45 +214,52 @@
             <button class="best-selling__button">Женские</button>
           </div>
 
-          <div class="best-selling__wrapper">
-
-            <div class="best-selling__product best-selling__product--big">
-              <div class="product product--big product--hot">
-                <img class="product__image" src="img/slick-formal-sneaker-shoe.png" alt="Slick formal sneaker shoe">
-                <span class="product__name">Slick formal sneaker shoe</span>
-                <div class="product__price">
-                  <span class="product__new">2 999 ₽ </span>
-                  <span class="product__old">4999 ₽</span>
-                  <button class="product__button product__button--big"></button>
+          <template id="product">
+            <div class="best-selling__wrapper">
+              <div class="best-selling__product best-selling__product--big">
+                <div class="product product--big product--hot">
+                  <img class="product__image" src="img/slick-formal-sneaker-shoe.png" alt="Slick formal sneaker shoe">
+                  <span class="product__name">Slick formal sneaker shoe</span>
+                  <div class="product__price">
+                    <span class="product__new">2 999 ₽ </span>
+                    <span class="product__old">4999 ₽</span>
+                    <button class="product__button product__button--big"></button>
+                  </div>
                 </div>
               </div>
             </div>
+          </template>
 
-            <div class="best-selling__product best-selling__product--medium">
-              <div class="product">
-                <img class="product__image" src="img/slick-sneaker-shoe.png" alt="Slick sneaker shoe">
-                <span class="product__name">Slick sneaker shoe</span>
-                <div class="product__price">
-                  <span class="product__new">2999 ₽</span>
-                  <span class="product__old">3999 ₽</span>
-                  <button class="product__button product__button--medium"></button>
-                </div>
-              </div>
-            </div>
+          <ul class="products__list"></ul>
 
-            <div class="best-selling__product best-selling__product--medium">
-              <div class="product product--new">
-                <img class="product__image" src="img/slick-canvas-shoe.png" alt="Slick canvas shoe">
-                <span class="product__name">Slick canvas shoe</span>
-                <div class="product__price">
-                  <span class="product__new">2999 ₽</span>
-                  <span class="product__old">3999 ₽</span>
-                  <button class="product__button product__button--medium"></button>
-                </div>
-              </div>
-            </div>
 
-          </div>
+<!--              <div class="best-selling__product best-selling__product&#45;&#45;medium">-->
+<!--                <div class="product">-->
+<!--                  <img class="product__image" src="img/slick-sneaker-shoe.png" alt="Slick sneaker shoe">-->
+<!--                  <span class="product__name">Slick sneaker shoe</span>-->
+<!--                  <div class="product__price">-->
+<!--                    <span class="product__new">2999 ₽</span>-->
+<!--                    <span class="product__old">3999 ₽</span>-->
+<!--                    <button class="product__button product__button&#45;&#45;medium"></button>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+
+<!--              <div class="best-selling__product best-selling__product&#45;&#45;medium">-->
+<!--                <div class="product product&#45;&#45;new">-->
+<!--                  <img class="product__image" src="img/slick-canvas-shoe.png" alt="Slick canvas shoe">-->
+<!--                  <span class="product__name">Slick canvas shoe</span>-->
+<!--                  <div class="product__price">-->
+<!--                    <span class="product__new">2999 ₽</span>-->
+<!--                    <span class="product__old">3999 ₽</span>-->
+<!--                    <button class="product__button product__button&#45;&#45;medium"></button>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+
+
+
+
           <button class="best-selling__btn">показать все</button>
         </div>
       </section>
@@ -336,7 +343,7 @@
       <button class="modal__continue">Продолжить покупки</button>
     </div>
 
-    <script src="js/script.js" defer type="module"></script>
+    <script src="js/main.js" defer type="module"></script>
 
   </body>
 </html>

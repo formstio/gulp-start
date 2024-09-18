@@ -3,7 +3,7 @@ export default (products, template, target, isTargetList = false, templateClass 
 
     const fragment = document.createDocumentFragment();
 
-    let productEl = template.querySelector('.best-selling__product');
+    let productEl = template.querySelector('.product');
 
     if (isTargetList) {
         const node = document.createElement('li');
@@ -19,7 +19,6 @@ export default (products, template, target, isTargetList = false, templateClass 
 
     products.forEach(product => {
         const itemEl = productEl.cloneNode(true);
-        const productItem = itemEl.querySelector('.product');
         const imageEl = itemEl.querySelector('.product__image');
         const nameEl = itemEl.querySelector('.product__name');
         const priceEl = itemEl.querySelector('.product__new');
@@ -33,11 +32,8 @@ export default (products, template, target, isTargetList = false, templateClass 
         priceEl.textContent = `${price} ₽`;
         oldPriceEl.textContent = `${oldPrice} ₽`;
 
-        if(isBig) {
-            productItem.classList.add('product--big');
-            itemEl.classList.add('best-selling__product--big');
-        } else {
-            itemEl.classList.add('product');
+        if (isBig) {
+            itemEl.classList.add('product--big');
         }
 
         if(status?.length) {

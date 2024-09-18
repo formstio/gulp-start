@@ -37,7 +37,7 @@ export default (products, template, target, isTargetList = false, templateClass 
             productItem.classList.add('product--big');
             itemEl.classList.add('best-selling__product--big');
         } else {
-            itemEl.classList.add('best-selling__product--medium');
+            itemEl.classList.add('product');
         }
 
         if(status?.length) {

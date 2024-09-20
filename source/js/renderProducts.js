@@ -19,6 +19,10 @@ export default (products, template, target, isTargetList = false, templateClass 
 
     products.forEach(product => {
         const itemEl = productEl.cloneNode(true);
+        // const wrapperEl = itemEl.querySelector('.best-selling__wrapper');
+        // const aEl = itemEl.querySelector('.best-selling__product');
+        // const bEl = itemEl.querySelector('.best-selling__product--medium');
+        // const w = itemEl.querySelector('.product');
         const imageEl = itemEl.querySelector('.product__image');
         const nameEl = itemEl.querySelector('.product__name');
         const priceEl = itemEl.querySelector('.product__new');
@@ -34,7 +38,9 @@ export default (products, template, target, isTargetList = false, templateClass 
 
         if (isBig) {
             itemEl.classList.add('product--big');
+            buttonEl.classList.add('product__button--big');
         }
+
 
         if(status?.length) {
             itemEl.classList.add(`product--${status}`);

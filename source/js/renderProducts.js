@@ -3,7 +3,7 @@ export default (products, template, target, isTargetList = false, templateClass 
 
     const fragment = document.createDocumentFragment();
 
-    let productEl = template.querySelector('.product');
+    let productEl = template.querySelector('.best-selling__product');
 
     if (isTargetList) {
         const node = document.createElement('li');
@@ -19,10 +19,6 @@ export default (products, template, target, isTargetList = false, templateClass 
 
     products.forEach(product => {
         const itemEl = productEl.cloneNode(true);
-        // const wrapperEl = itemEl.querySelector('.best-selling__wrapper');
-        // const aEl = itemEl.querySelector('.best-selling__product');
-        // const bEl = itemEl.querySelector('.best-selling__product--medium');
-        // const w = itemEl.querySelector('.product');
         const imageEl = itemEl.querySelector('.product__image');
         const nameEl = itemEl.querySelector('.product__name');
         const priceEl = itemEl.querySelector('.product__new');
@@ -37,13 +33,16 @@ export default (products, template, target, isTargetList = false, templateClass 
         oldPriceEl.textContent = `${oldPrice} ₽`;
 
         if (isBig) {
-            itemEl.classList.add('product--big');
+            itemEl.classList.add('best-selling__product--big');
+            itemEl.querySelector('.product').classList.add('product--big');
             buttonEl.classList.add('product__button--big');
+            itemEl.classList.remove('best-selling__product--medium');
+            buttonEl.classList.remove('product__button--medium');
         }
 
 
         if(status?.length) {
-            itemEl.classList.add(`product--${status}`);
+            itemEl.querySelector('.product').classList.add(`product--${status}`);
         }
 
         fragment.appendChild(itemEl);

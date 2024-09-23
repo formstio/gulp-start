@@ -1,6 +1,5 @@
 // import products from './products.js';
 import renderProducts from './renderProducts.js';
-
 import {fetchApi} from './api.js';
 
 

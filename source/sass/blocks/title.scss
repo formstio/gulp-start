@@ -6,6 +6,10 @@
   text-transform: capitalize;
   color: #000;
 
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+
   @media (min-width: 768px) {
     font-size: 45px;
     margin-top: 0;

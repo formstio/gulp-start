@@ -21,17 +21,14 @@
 
   &--hidden {
     display: none;
-
-    &--open {
-      display: block;
-    }
-  }
-
-  &--popup {
     width: 300px;
 
     @media (min-width: 768px) {
       width: 464px;
+    }
+
+    &--open {
+      display: block;
     }
   }
 
@@ -71,10 +68,14 @@
     margin-bottom: 15px;
     color: #000;
 
+    &--red {
+      color: #ff0000;
+    }
+
     @media (min-width: 768px) {
       font-size: 32px;
       line-height: 38px;
-      margin-bottom: 35px;
+      margin-bottom: 25px;
     }
 
     @media (max-width: 767px) {
@@ -101,5 +102,13 @@
       line-height: 36px;
       padding: 13px 20px;
     }
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 25px;
   }
 }

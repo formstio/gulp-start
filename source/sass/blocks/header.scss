@@ -163,6 +163,7 @@
       @include clear-button;
       display: flex;
       position: relative;
+      cursor: pointer;
       z-index: 1001;
 
       &--burger {

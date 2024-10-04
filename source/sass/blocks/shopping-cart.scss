@@ -1,0 +1,274 @@
+.shopping-cart {
+
+    display: none;
+
+    &--active {
+        display: block;
+    }
+
+    &__list {
+        @include clear-list;
+        position: absolute;
+        width: 614px;
+        background-color: #FBFBFB;
+        box-shadow: -1px 3px 17px 3px rgb(0 0 0 / 20%);
+        border-radius: 15px;
+        top: 80px;
+        right: 75px;
+        z-index: 112;
+
+        @media (max-width: 1728px) {
+            right: 10px;
+        }
+
+        @media (max-width: 767px) {
+            width: 300px;
+            top: 45px;
+            right: 45px;
+        }
+    }
+
+    &__close {
+        @include clear-button;
+        position: absolute;
+        cursor: pointer;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+
+        img {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    &__title {
+        width: 272px;
+        height: 39px;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 39px;
+        text-transform: capitalize;
+        margin-left: 30px;
+        color: #000000;
+
+        @media (max-width: 767px) {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        margin-bottom: -2px;
+
+        @media (max-width: 767px) {
+            padding: 0 20px;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 2px solid #E5E5E5;
+        border-bottom: 2px solid #E5E5E5;
+        width: 100%;
+        height: 61px;
+
+        @media (max-width: 767px) {
+            height: 96px;
+            display: grid;
+            align-content: center;
+            column-gap: 15px;
+            grid-template-columns: 20% 1fr;
+            grid-template-rows: auto auto;
+
+            p {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                color: #000000;
+            }
+        }
+    }
+
+    &__image {
+        width: 48px;
+        height: 31px;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 21px;
+        line-height: 25px;
+        color: #000000;
+    }
+
+    &__price {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+
+        @media (max-width: 767px) {
+            margin-left: 88px;
+        }
+    }
+
+    &__operation {
+        @include clear-list;
+        display: flex;
+        justify-content: center;
+        width: 86px;
+        border-left: 2px solid #000000;
+        border-right: 2px solid #000000;
+        height: 18px;
+
+        @media (max-width: 767px) {
+            border: none;
+            width: 60px;
+        }
+    }
+
+    &__minus {
+        border: none;
+        background-color: #FBFBFB;
+        cursor: pointer;
+    }
+
+    &__input {
+        width: 20px;
+        background-color: #FBFBFB;
+        border: none;
+    }
+
+    &__plus {
+        border: none;
+        background-color: #FBFBFB;
+        cursor: pointer;
+    }
+
+    &__delete {
+        border: none;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        @media (max-width: 767px) {
+            display: none;
+        }
+
+        span {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            border: none;
+            outline: none;
+            background-color: #dc4b54;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 14px;
+                height: 14px;
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='ag17-b1'%3E%3Cpath fill='currentColor' d='m4.888 3.035.275-.826A2.5 2.5 0 0 1 7.535.5h.93a2.5 2.5 0 0 1 2.372 1.71l.275.825c2.267.09 3.555.406 3.555 1.527 0 .938-.417.938-1.25.938H2.583c-.833 0-1.25 0-1.25-.937 0-1.122 1.288-1.438 3.555-1.528m1.856-.299-.088.266Q7.295 3 8 3t1.345.002l-.089-.266a.83.83 0 0 0-.79-.57h-.931a.83.83 0 0 0-.79.57M2.167 7.167c0-.6.416-.834.833-.834h10c.417 0 .833.235.833.834 0 6.666-.416 8.333-5.833 8.333s-5.833-1.667-5.833-8.333m4.166 1.666a.833.833 0 0 0-.833.834v1.666a.833.833 0 1 0 1.667 0V9.667a.833.833 0 0 0-.834-.834m4.167.834a.833.833 0 1 0-1.667 0v1.666a.833.833 0 1 0 1.667 0z'%3E%3C/path%3E%3C/svg%3E");
+                mask-size: 14px 14px;
+                background-color: #fff;
+                transition: 0.3s;
+            }
+        }
+
+        &:hover {
+            span {
+                background-color: #d3d3d3;
+
+                &::before {
+                    background-color: #4d4d4d;
+                }
+            }
+        }
+    }
+
+    &__result {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 30px 44px 0 30px;
+
+        @media (max-width: 767px) {
+            margin: 20px 20px 0 20px;
+        }
+    }
+
+    &__total {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+
+        @media (max-width: 767px) {
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
+    &__amount {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+        margin-left: 120px;
+
+        @media (max-width: 767px) {
+            font-size: 16px;
+            line-height: 19px;
+            margin: 0;
+        }
+    }
+
+    &__total-amount {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+
+        @media (max-width: 767px) {
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
+    &__order {
+        @include clear-button;
+        width: 312px;
+        height: 63px;
+        background-color: #DC4B54;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 37px;
+        color: #ffffff;
+        margin: 32px 0px 19px 272px;
+        cursor: pointer;
+
+        @media (max-width: 767px) {
+            width: 260px;
+            margin: 20px;
+        }
+    }
+}

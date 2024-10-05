@@ -14,22 +14,21 @@ buttonOpened.addEventListener('click', function () {
 });
 
 
+const orderButton = document.querySelector ('#order-button');
+const closeModal = document.querySelector ('.modal__close');
+const modalDone = document.querySelector ('.modal--hidden-done');
+const nextBay = document.querySelector ('.modal__continue');
 
+export const addProduct = function () {
+    modalDone.classList.remove('modal--hidden-done--open');
+    closeModal.removeEventListener('click', addProduct);
+    nextBay.removeEventListener('click', addProduct);
+};
 
-// const orderButton = document.querySelector ('#order-button');
-// const closeModal = document.querySelector ('.modal__close');
-// const nextBay = document.querySelector ('.modal__continue');
-// const modal = document.querySelector ('.modal');
-//
-// export const addProduct = function () {
-//     modal.classList.remove('modal_cart_order-done');
-//     closeModal.removeEventListener('click', addProduct);
-//     nextBay.removeEventListener('click', addProduct);
-// };
-//
-// orderButton.addEventListener('click', function () {
-//     modal.classList.add('modal--hidden--open');
-//     closeModal.addEventListener('click', addProduct);
-//     nextBay.addEventListener('click', addProduct);
-// })
+orderButton.addEventListener('click', function () {
+    modalDone.classList.add('modal--hidden-done--open');
+    closeModal.addEventListener('click', addProduct);
+    nextBay.addEventListener('click', addProduct);
+});
+
 

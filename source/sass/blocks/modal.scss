@@ -32,6 +32,32 @@
     }
   }
 
+  &--hidden-done {
+    display: none;
+    width: 300px;
+
+    @media (min-width: 768px) {
+      width: 464px;
+    }
+
+    &--open {
+      display: block;
+    }
+  }
+
+  &--hidden-error {
+    display: none;
+    width: 300px;
+
+    @media (min-width: 768px) {
+      width: 464px;
+    }
+
+    &--open {
+      display: block;
+    }
+  }
+
   &__close {
     @include clear-button;
     position: absolute;

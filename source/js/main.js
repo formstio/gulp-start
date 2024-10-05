@@ -7,6 +7,7 @@ import {closeModal} from './menu.js';
 
 
 
+
 const productsList = document.querySelector('.best-selling__wrapper');
 const productsTemplate = document.querySelector('#product').content;
 

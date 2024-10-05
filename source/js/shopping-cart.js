@@ -1,4 +1,5 @@
 import {getStorage, addToStorage, removeFromStorage} from './localstorage.js';
+import './modals.js';
 
 
 // const orderButton = document.querySelector('#order-button');
@@ -13,6 +14,7 @@ const editAmountProducts = (clone, product, operation = 'plus') => {
     const amountEl = document.querySelector('.shopping-cart__amount > span');
     const amountCartEl = document.querySelector('.header__button--shop-cart > span');
     const totalEl = document.querySelector('.shopping-cart__total-amount > span');
+    const delEl = clone.querySelector('.shopping-cart__delete');
 
     const totalPrice = Number(totalEl.textContent.replace(/\D/g, ''));
 
@@ -53,7 +55,7 @@ export const renderCart = () => {
 
     const uniqueData = [...new Set(data.map(JSON.stringify))].map(JSON.parse).sort((a, b) => a.id - b.id);
 
-    const target = document.querySelector('.shopping-cart__list');
+    const target = document.querySelector('.shopping-cart__list-wrapper');
     const tamplate = document.querySelector('.shopping-cart__template').content.querySelector('.shopping-cart__item');
 
     const fragment = document.createDocumentFragment();
@@ -62,7 +64,6 @@ export const renderCart = () => {
 
     uniqueData.forEach(product => {
         const clone = tamplate.cloneNode(true);
-
 
         clone.querySelector('.shopping-cart__input').value = countsData[product.id] || 0;
         clone.querySelector('.shopping-cart__image').src = product.image;
@@ -80,6 +81,11 @@ export const renderCart = () => {
             addToStorage('cart', product);
 
             editAmountProducts(clone, product, 'plus');
+        });
+
+        clone.querySelector('.shopping-cart__delete').addEventListener('click', () => {
+            removeFromStorage('cart', product.id);
+            clone.remove();
         });
 
         fragment.append(clone);

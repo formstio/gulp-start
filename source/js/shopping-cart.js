@@ -1,5 +1,5 @@
 import {getStorage, addToStorage, removeFromStorage} from './localstorage.js';
-import './modals.js';
+// import './modals.js';
 
 
 // const orderButton = document.querySelector('#order-button');
@@ -102,6 +102,19 @@ export const renderCart = () => {
     const totalEl = document.querySelector('.shopping-cart__total-amount > span');
     totalEl.textContent = data.reduce((acc, curr) => acc + Number(curr.price), 0);
 
+    const cartIndex = document.querySelector('.header__count');
+    const cart = document.querySelector('.header');
+
+    function updateCartIndex() {
+        const cartCount = cart.children.length;
+        if (cartCount > 0) {
+            cartIndex.classList.add('header__count-red');
+        } else {
+            cartIndex.classList.remove('header__count-red');
+        }
+    }
+
+    updateCartIndex();
 };
 
 renderCart();

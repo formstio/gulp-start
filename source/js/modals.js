@@ -31,4 +31,19 @@ orderButton.addEventListener('click', function () {
     nextBay.addEventListener('click', addProduct);
 });
 
+const addToCart = document.querySelectorAll ('.product__button');
+const modalAddCart = document.querySelector ('.modal--hidden');
+
+
+export const addProductCart = function () {
+    modalAddCart.classList.remove('modal--hidden--open');
+    closeModal.removeEventListener('click', addProductCart);
+};
+
+addToCart.forEach(addToCart => {
+    addToCart.addEventListener('click', function () {
+        modalAddCart.classList.add('modal--hidden--open');
+        closeModal.addEventListener('click', addProductCart);
+    });
+});
 

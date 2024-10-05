@@ -1,3 +1,5 @@
+import { addToStorage } from './localstorage.js';
+import { renderCart } from './shopping-cart.js';
 
 export default (products, template, target, isTargetList = false, templateClass = '') => {
 
@@ -39,6 +41,11 @@ export default (products, template, target, isTargetList = false, templateClass 
             itemEl.classList.remove('best-selling__product--medium');
             buttonEl.classList.remove('product__button--medium');
         }
+
+        buttonEl.addEventListener('click', () => {
+            addToStorage('cart', product);
+            renderCart();
+        });
 
 
         if(status?.length) {

@@ -65,6 +65,20 @@
 
     }
 
+    &__cart-empty {
+        display: none;
+
+        &--hidden {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-style: oblique;
+        }
+    }
+
+
+
     &__item {
         display: flex;
         align-items: center;
@@ -146,6 +160,7 @@
         @include clear-list;
         display: flex;
         justify-content: center;
+        gap: 5px;
         width: 86px;
         border-left: 2px solid #000000;
         border-right: 2px solid #000000;
@@ -158,21 +173,55 @@
     }
 
     &__minus {
+        @include clear-button;
+        display: flex;
+        align-items: center;
         border: none;
         background-color: #FBFBFB;
         cursor: pointer;
+        font-size: 21px;
+        font-weight: 500;
+        line-height: 25px;
+        color: #000000;
+
+        @media (max-width: 767px) {
+            font-size: 15px;
+        }
     }
 
     &__input {
+        @include clear-button;
+        display: flex;
+        align-items: center;
+        text-align: center;
         width: 20px;
         background-color: #FBFBFB;
         border: none;
+        font-size: 21px;
+        font-weight: 500;
+        line-height: 25px;
+
+        @media (max-width: 767px) {
+            font-size: 15px;
+        }
     }
 
     &__plus {
+        @include clear-button;
+        display: flex;
+        align-items: center;
         border: none;
         background-color: #FBFBFB;
         cursor: pointer;
+        font-size: 21px;
+        font-weight: 500;
+        line-height: 25px;
+        margin-bottom: 2px;
+        color: #000000;
+
+        @media (max-width: 767px) {
+            font-size: 15px;
+        }
     }
 
     &__delete {

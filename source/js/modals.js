@@ -11,6 +11,7 @@ export const actionModal = function () {
 buttonOpened.addEventListener('click', function () {
     actionBurger.classList.add('shopping-cart--active');
     buttonClose.addEventListener('click', actionModal);
+
 });
 
 
@@ -23,27 +24,20 @@ export const addProduct = function () {
     modalDone.classList.remove('modal--hidden-done--open');
     closeModal.removeEventListener('click', addProduct);
     nextBay.removeEventListener('click', addProduct);
+
 };
 
 orderButton.addEventListener('click', function () {
     modalDone.classList.add('modal--hidden-done--open');
     closeModal.addEventListener('click', addProduct);
     nextBay.addEventListener('click', addProduct);
-});
-
-const addToCart = document.querySelectorAll ('.product__button');
-const modalAddCart = document.querySelector ('.modal--hidden');
-
-
-export const addProductCart = function () {
-    modalAddCart.classList.remove('modal--hidden--open');
-    closeModal.removeEventListener('click', addProductCart);
-};
-
-addToCart.forEach(addToCart => {
-    addToCart.addEventListener('click', function () {
-        modalAddCart.classList.add('modal--hidden--open');
-        closeModal.addEventListener('click', addProductCart);
+    document.addEventListener('click', function (event) {
+        if (!event.target.closest('.shopping-cart, .modal--hidden-done')) {
+            modalDone.classList.remove('modal--hidden-done--open');
+        }
     });
 });
+
+
+
 

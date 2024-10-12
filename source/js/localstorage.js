@@ -15,6 +15,7 @@ export const addToStorage = (storageName, data) => {
 export const removeFromStorage = (storageName, id) => {
     const storageData = JSON.parse(localStorage.getItem(storageName));
 
+
     if(!storageData) {
         return;
     }

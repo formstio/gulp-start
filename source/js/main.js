@@ -1,7 +1,6 @@
 import {fetchApi} from './api.js';
 import renderProducts from './renderProducts.js';
 import './shopping-cart.js';
-import './modals.js';
 import {closeModal} from './menu.js';
 
 

@@ -1,6 +1,4 @@
 import {getStorage, addToStorage, removeFromStorage} from './localstorage.js';
-// import './modals.js';
-
 
 // const orderButton = document.querySelector('#order-button');
 // orderButton.addEventListener('click', () => {
@@ -14,7 +12,6 @@ const editAmountProducts = (clone, product, operation = 'plus') => {
     const amountEl = document.querySelector('.shopping-cart__amount > span');
     const amountCartEl = document.querySelector('.header__button--shop-cart > span');
     const totalEl = document.querySelector('.shopping-cart__total-amount > span');
-    const delEl = clone.querySelector('.shopping-cart__delete');
 
     const totalPrice = Number(totalEl.textContent.replace(/\D/g, ''));
 
@@ -31,7 +28,16 @@ const editAmountProducts = (clone, product, operation = 'plus') => {
             clone.querySelector('.shopping-cart__input').value = Number(input) - 1;
             amountEl.textContent = Number(amountEl.textContent) - 1;
             amountCartEl.textContent = Number(amountCartEl.textContent) - 1;
+        } else {
+            const cart = JSON.parse(localStorage.getItem('cart'));
+            const index = cart.findIndex(item => item.id === product.id);
+            if (index !== -1) {
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                clone.remove();
+            }
         }
+        renderCart();
     }
 }
 
@@ -39,6 +45,12 @@ export const renderCart = () => {
     const data = getStorage('cart');
 
     if(!data?.length) {
+        const target = document.querySelector('.shopping-cart__list-wrapper');
+        target.innerHTML = '';
+        const cartEmpty = document.querySelector('.shopping-cart__cart-empty');
+        cartEmpty.classList.remove('shopping-cart__cart-empty');
+        cartEmpty.classList.add('shopping-cart__cart-empty--hidden');
+        target.append(cartEmpty);
         return;
     };
 
@@ -62,6 +74,8 @@ export const renderCart = () => {
 
     target.innerHTML = '';
 
+
+
     uniqueData.forEach(product => {
         const clone = tamplate.cloneNode(true);
 
@@ -83,9 +97,24 @@ export const renderCart = () => {
             editAmountProducts(clone, product, 'plus');
         });
 
+        function removeCartFromLocalstorage() {
+            const cart = JSON.parse(localStorage.getItem('cart'));
+            if (cart && cart.length === 0) {
+                localStorage.removeItem('cart');
+                document.querySelector('.shopping-cart__amount > span').textContent = '0';
+                document.querySelector('.shopping-cart__total-amount > span').textContent = '0';
+                document.querySelector('.header__count').textContent = '0';
+                document.querySelector('.header__count').classList.remove('header__count-red');
+            }
+        }
         clone.querySelector('.shopping-cart__delete').addEventListener('click', () => {
-            removeFromStorage('cart', product.id);
+            const productId = product.id;
+            const cart = JSON.parse(localStorage.getItem('cart'));
+            const newCart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(newCart));
             clone.remove();
+            removeCartFromLocalstorage();
+            renderCart();
         });
 
         fragment.append(clone);
@@ -115,6 +144,7 @@ export const renderCart = () => {
     }
 
     updateCartIndex();
+
 };
 
 renderCart();

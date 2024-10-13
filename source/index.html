@@ -48,7 +48,7 @@
             <img src="img/icon-search.svg" alt="button serch">
           </button>
 
-          <button class="header__button">
+          <button class="header__button header__button--shop-cart">
             <img src="img/icon-shop-cart.svg" alt="shop cart">
             <span class="header__count">0</span>
           </button>
@@ -223,7 +223,7 @@
                   <div class="product__price">
                     <span class="product__new">2999 ₽</span>
                     <span class="product__old">3999 ₽</span>
-                    <button class="product__button product__button--medium"></button>
+                    <button class="product__button product__button--medium" id ="bs-product-button"></button>
                   </div>
                 </div>
               </div>
@@ -306,7 +306,8 @@
 
     </main>
 
-    <div id="modal_cart" class="modal modal--hidden modal--popup">
+    <div class="modal modal--hidden" id="modal_cart">
+      <div class="modal__overlay"></div>
       <button class="modal__close">
         <img src="img/icon-close.svg" alt="icon of close button">
       </button>
@@ -314,7 +315,57 @@
       <button class="modal__continue">Продолжить покупки</button>
     </div>
 
+    <div  class="modal modal--hidden-error" id="modal_cart_error">
+      <button class="modal__close">
+        <img src="img/icon-close.svg" alt="icon of close button">
+      </button>
+      <span class="modal__text modal__text--red">Ошибка!</span>
+      <p class="modal__title">Что-то пошло не так. Мы уже знаем о проблеме. Зайдите позже.</p>
+      <button class="modal__continue">Продолжить покупки</button>
+    </div>
+
+    <div  class="modal modal--hidden-done" id="modal_cart_order-done">
+      <button class="modal__close">
+        <img src="img/icon-close.svg" alt="icon of close button">
+      </button>
+      <span class="modal__text">Заказ оформлен. <br> Ожидайте звонка</span>
+      <button class="modal__continue">Продолжить покупки</button>
+    </div>
+
+    <div class="shopping-cart">  <!-- shopping-cart--active -->
+      <ul class="shopping-cart__list">
+        <h1 class="shopping-cart__title">Корзина товаров</h1>
+        <div class="shopping-cart__cart-empty">Корзина пуста</div>
+        <button class="shopping-cart__close" aria-label="Закрыть корзину">
+          <img src="img/icon-close.svg" alt="Menu close">
+        </button>
+        <template class="shopping-cart__template" id="shopping-cart-product">
+          <li class="shopping-cart__item">
+            <a href="#" class="shopping-cart__link">
+              <img class="shopping-cart__image" src="./img/img-cart.png" alt="Первый товар">
+              <p class="shopping-cart__name">Running sport shoe</p>
+              <div class="shopping-cart__operation">
+                <button class="shopping-cart__minus">-</button>
+                <input type="text" class="shopping-cart__input" placeholder="0">
+                <button class="shopping-cart__plus">+</button>
+              </div>
+              <span class="shopping-cart__price">2 750 ₽</span>
+              <button type="button" class="shopping-cart__delete" aria-label="Удалить товар из корзины"><span></span></button>
+            </a>
+          </li>
+        </template>
+        <ul class="shopping-cart__list-wrapper"></ul>
+        <div class="shopping-cart__result">
+          <span class="shopping-cart__total">Итого:</span>
+          <span class="shopping-cart__amount"><span>0</span> шт.</span>
+          <span class="shopping-cart__total-amount"><span>0</span> ₽</span>
+        </div>
+        <button class="shopping-cart__order" id ="order-button">Оформить заказ</button>
+      </ul>
+    </div>
+
     <script src="js/main.js" defer type="module"></script>
+
 
   </body>
 </html>

@@ -1,3 +1,6 @@
+import { addToStorage } from './localstorage.js';
+import { renderCart } from './shopping-cart.js';
+import {addProduct} from './modals.js';
 
 export default (products, template, target, isTargetList = false, templateClass = '') => {
 
@@ -39,6 +42,27 @@ export default (products, template, target, isTargetList = false, templateClass 
             itemEl.classList.remove('best-selling__product--medium');
             buttonEl.classList.remove('product__button--medium');
         }
+
+        const addCart = document.querySelector ('.modal--hidden');
+        const closeModal = document.querySelector ('.modal__close');
+        const nextBay = document.querySelector ('.modal__continue');
+
+        const addProductCart = function () {
+            addCart.classList.remove('modal--hidden--open');
+            closeModal.removeEventListener('click', addProductCart);
+            nextBay.removeEventListener('click', addProductCart);
+        };
+
+        buttonEl.addEventListener('click', function () {
+            addCart.classList.add('modal--hidden--open');
+            closeModal.addEventListener('click', addProductCart);
+            nextBay.addEventListener('click', addProductCart);
+        });
+
+        buttonEl.addEventListener('click', () => {
+            addToStorage('cart', product);
+            renderCart();
+        });
 
 
         if(status?.length) {

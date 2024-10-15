@@ -2,6 +2,7 @@ import {fetchApi} from './api.js';
 import renderProducts from './renderProducts.js';
 import './shopping-cart.js';
 import {closeModal} from './menu.js';
+import './sliders.js';
 
 
 

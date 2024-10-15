@@ -8,7 +8,7 @@
   &__pagination {
     position: absolute;
     top: 94% !important;
-    right: 39% !important;
+    right: 2% !important;
     z-index: 68;
     width: auto !important;
     left: auto !important;
@@ -17,9 +17,8 @@
     gap: 20px;
     transition: width 0.3s ease;
 
-    @media (min-width: 768px) {
-      top: 95% !important;
-      right: 8% !important;
+    @media (max-width: 767px) {
+      right: 38% !important;
     }
   }
 
@@ -32,9 +31,9 @@
     @media (min-width: 768px) {
       display: block;
       position: absolute;
-      width: 19px;
+      width: 80px;
       height: 25px;
-      top: 48%;
+      top: 55%;
       z-index: 5;
       cursor: pointer;
 
@@ -44,13 +43,17 @@
       left: 6%;
 
       @media (min-width: 1728px) {
-        left: 9%;
+        left: 2%;
       }
     }
 
     &--right {
       transform: rotate(180deg);
-      left: 90%;
+      left: 94%;
+
+      @media (max-width: 1728px) {
+        left: 86%;
+      }
     }
   }
 
@@ -65,5 +68,20 @@
       top: 48%;
       right: 1%;
     }
+  }
+
+  &__button {
+    @include clear-button;
+    width: 11px;
+    height: 11px;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+
+  &__button-active {
+    @include clear-button;
+    width: 30px;
+    height: 11px;
+    background-color: #ffffff;
   }
 }

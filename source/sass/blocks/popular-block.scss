@@ -22,8 +22,6 @@
 
   &__title-block {
     width: 300px;
-    //height: 324px;
-    //margin-bottom: 34px;
 
     @media (min-width: 768px) {
       width: 300px;
@@ -118,6 +116,7 @@
 
   &__slide-left {
     @include clear-button;
+    cursor: pointer;
     position: absolute;
     width: 27px;
     height: 15px;
@@ -139,6 +138,7 @@
   &__slide-right {
     @include clear-button;
     position: absolute;
+    cursor: pointer;
     width: 27px;
     height: 15px;
     top: 43%;

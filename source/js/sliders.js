@@ -1,4 +1,4 @@
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js';
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 
 const swiper = new Swiper('.banners__swiper', {
 
@@ -21,8 +21,11 @@ const swiper = new Swiper('.banners__swiper', {
 
 const swiperBar = new Swiper('.popular-block__slider', {
 
+    slidesPerView: 1,
+    slidesPerGroup: 1,
     direction: 'horizontal',
     loop: true,
+
     spaceBetween: 70,
 
     pagination: {
@@ -33,6 +36,13 @@ const swiperBar = new Swiper('.popular-block__slider', {
         nextEl: '.popular-block__slide-right',
         prevEl: '.popular-block__slide-left',
     },
+
+    breakpoints: {
+        1728: {
+            slidesPerView: 3,
+            centeredSlides: true,
+        }
+    }
 
 });
 // console.log(swiperBar);

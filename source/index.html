@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ваш проект</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
@@ -131,10 +132,13 @@
           </div>
 
           <div class="popular-block__slider">
+            <div class="popular-block__pagination"></div>
+            <button class="popular-block__slide-left"><img src="img/slide-left.svg" alt="#"></button>
+            <button class="popular-block__slide-right"><img src="img/slide-right.svg" alt="#"></button>
 
-            <div class="popular-block__product-wrapper">
+            <div class="popular-block__product-wrapper swiper-wrapper">
 
-              <div class="product product--border-radius">
+              <div class="swiper-slide product product--border-radius product--hidden-slide">
                 <img class="product__image product__image--slide-size" src="img/slider-sneaker-1.png" alt="sneaker 1">
                 <span class="product__name">Running sport shoe</span>
                 <div class="product__price">
@@ -143,7 +147,7 @@
                 </div>
               </div>
 
-              <div class="product product--border-radius product--hidden-slide">
+              <div class="swiper-slide product product--border-radius product--hidden-slide">
                 <img class="product__image product__image--slide-size" src="img/slider-sneaker-2.png" alt="sneaker 2">
                 <span class="product__name">Running sport shoe</span>
                 <div class="product__price">
@@ -152,7 +156,7 @@
                 </div>
               </div>
 
-              <div class="product product--border-radius product--hidden-slide">
+              <div class="swiper-slide product product--border-radius product--hidden-slide">
                 <img class="product__image product__image--slide-size" src="img/slider-sneaker-3.png" alt="sneaker 3">
                 <span class="product__name">Running sport shoe</span>
                 <div class="product__price">
@@ -161,14 +165,24 @@
                 </div>
               </div>
 
-            </div>
-            <div class="popular-block__button">
-              <button class="popular-block__slide-left"><img src="img/slide-left.svg" alt="#"></button>
-              <button class="popular-block__slide-right"><img src="img/slide-right.svg" alt="#"></button>
-            </div>
+              <div class="swiper-slide product product--border-radius product--hidden-slide">
+                <img class="product__image product__image--slide-size" src="img/slider-sneaker-3.png" alt="sneaker 3">
+                <span class="product__name">Running sport shoe</span>
+                <div class="product__price">
+                  <span>3999 ₽</span>
+                  <button class="product__button product__button--slide-size"></button>
+                </div>
+              </div>
 
-            <div class="popular-block__indicator pagination pagination__item--black"></div>
-
+              <div class="swiper-slide product product--border-radius product--hidden-slide">
+                <img class="product__image product__image--slide-size" src="img/slider-sneaker-3.png" alt="sneaker 3">
+                <span class="product__name">Running sport shoe</span>
+                <div class="product__price">
+                  <span>3999 ₽</span>
+                  <button class="product__button product__button--slide-size"></button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <button class="popular-block__show-all-mobile button">Показать все</button>
@@ -176,15 +190,13 @@
       </section>
 
       <section class="slide-banner">
-        <div class="slide-banner__container container">
-          <div class="slide-banner__swiper">
-
-            <button class="slide-banner__swap slide-banner__swap--left"></button>
-            <button class="slide-banner__swap slide-banner__swap--right"></button>
-
+        <div class="slide-banner__container">
+          <div class="slide-banner__swiper banners__swiper">
             <div class="slide-banner__pagination"></div>
-            <ul class="slide-banner__list banner swiper-wrapper">
+            <button class="slide-banner__swap slide-banner__swap--left slide-btn-left"></button>
+            <button class="slide-banner__swap slide-banner__swap--right slide-btn-right"></button>
 
+            <ul class="slide-banner__list banner swiper-wrapper">
               <li class="swiper-slide banner__item banner__item--bg-red banner__item--bg-slick">
                 <div class="banner__content-wrapper">
                   <span class="banner__subtitle">Ты готов</span>
@@ -192,6 +204,36 @@
                     проложить свой путь?
                   </h3>
                   <button class="banner__button button button--bgWhite button--textRed">См Все</button>
+                  <ul class="banner__link-list">
+                    <li><a href="#" class="banner__link-item"><img src="img/slide-mini-sneaker-1.png" alt=""></a></li>
+                    <li><a href="#" class="banner__link-item"><img src="img/slide-mini-sneaker-2.png" alt=""></a></li>
+                    <li><a href="#" class="banner__link-item"><img src="img/slide-mini-sneaker-3.png" alt=""></a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="swiper-slide banner__item banner__item--bg-blue banner__item--bg-slick">
+                <div class="banner__content-wrapper">
+                  <span class="banner__subtitle">Ты готов</span>
+                  <h3 class="banner__title">
+                    проложить свой путь?
+                  </h3>
+                  <button class="banner__button button button--bgWhite button--textBlue">См Все</button>
+                  <ul class="banner__link-list">
+                    <li><a href="#" class="banner__link-item"><img src="img/slide-mini-sneaker-1.png" alt=""></a></li>
+                    <li><a href="#" class="banner__link-item"><img src="img/slide-mini-sneaker-2.png" alt=""></a></li>
+                    <li><a href="#" class="banner__link-item"><img src="img/slide-mini-sneaker-3.png" alt=""></a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="swiper-slide banner__item banner__item--bg-green banner__item--bg-slick">
+                <div class="banner__content-wrapper">
+                  <span class="banner__subtitle">Ты готов</span>
+                  <h3 class="banner__title">
+                    проложить свой путь?
+                  </h3>
+                  <button class="banner__button button button--bgWhite button--textGreen">См Все</button>
                   <ul class="banner__link-list">
                     <li><a href="#" class="banner__link-item"><img src="img/slide-mini-sneaker-1.png" alt=""></a></li>
                     <li><a href="#" class="banner__link-item"><img src="img/slide-mini-sneaker-2.png" alt=""></a></li>

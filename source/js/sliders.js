@@ -22,14 +22,14 @@ const swiper = new Swiper('.banners__swiper', {
 const swiperBar = new Swiper('.popular-block__slider', {
 
     slidesPerView: 1,
-    slidesPerGroup: 1,
     direction: 'horizontal',
     loop: true,
-
     spaceBetween: 70,
 
     pagination: {
         el: '.popular-block__pagination',
+        bulletActiveClass: 'popular-block__button-active',
+        bulletClass: 'popular-block__button',
     },
 
     navigation: {
@@ -43,6 +43,4 @@ const swiperBar = new Swiper('.popular-block__slider', {
             centeredSlides: true,
         }
     }
-
 });
-// console.log(swiperBar);

@@ -3,6 +3,11 @@
 
   &__swiper {
     overflow: hidden;
+    margin-top: 50px;
+
+    @media (max-width: 767px) {
+      margin-top: 0;
+    }
   }
 
   &__pagination {
@@ -83,5 +88,11 @@
     width: 30px;
     height: 11px;
     background-color: #ffffff;
+  }
+
+  &__list {
+    @media (max-width: 767px) {
+      padding: 0;
+    }
   }
 }
